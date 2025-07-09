@@ -1,0 +1,16 @@
+services:
+  - type: web
+    name: trustpay-n8n
+    env: docker
+    plan: free
+    dockerfilePath: ./Dockerfile
+    autoDeploy: true
+    envVars:
+      - key: N8N_BASIC_AUTH_ACTIVE
+        value: "true"
+      - key: N8N_BASIC_AUTH_USER
+        value: admin
+      - key: N8N_BASIC_AUTH_PASSWORD
+        value: admin123
+      - key: WEBHOOK_URL
+        value: https://trustpay-n8n.onrender.com/
